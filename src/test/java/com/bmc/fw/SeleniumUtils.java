@@ -15,9 +15,11 @@ public class SeleniumUtils {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(12, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
-        driver.get(Constans.baseURL);
-
     }
+    public void start(){
+        driver.get(Constans.baseURL);
+    }
+
     public void stop(){
         driver.quit();
     }

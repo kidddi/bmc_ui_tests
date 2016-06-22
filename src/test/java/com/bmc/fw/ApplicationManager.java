@@ -8,8 +8,18 @@ import org.openqa.selenium.WebDriver;
 public class ApplicationManager {
     private SeleniumUtils seleniumUtils;
     private WebDriver driver;
-    private NavUtils navUtils;
+    private GroupsHelper groupHelper;
+    private NavHelper navUtils;
+    private static ApplicationManager app;
 
+    public static ApplicationManager getInstanse() {
+        app = new ApplicationManager();
+        return app;
+    }
+    public void init(){
+        seleniumUtils = new SeleniumUtils();
+        seleniumUtils.start();
+    }
 
     public SeleniumUtils getSeleniumUtils(){
         if (seleniumUtils == null){
@@ -23,14 +33,16 @@ public class ApplicationManager {
         seleniumUtils.stop();
         }
     }
-    public NavUtils getNavUtils(){
+    public NavHelper getNavHelper(){
         if (navUtils == null){
-            navUtils = new NavUtils(this);
+            navUtils = new NavHelper(this);
         }
         return navUtils;
     }
-    public void createGroups(){
-        getNavUtils().openMainPage();
-        getNavUtils().gotoGroupsPage();
+    public GroupsHelper getGroupsHelper(){
+        if (groupHelper == null){
+            groupHelper = new GroupsHelper(this);
+        }
+        return groupHelper;
     }
 }
