@@ -1,21 +1,14 @@
 package com.bmc.fw;
 
-import org.openqa.selenium.WebDriver;
-
-/**
- * Created by Александр on 21.06.2016.
- */
 public class ApplicationManager {
     private SeleniumUtils seleniumUtils;
-    private WebDriver driver;
     private GroupsHelper groupHelper;
     private NavHelper navUtils;
-    private static ApplicationManager app;
 
     public static ApplicationManager getInstanse() {
-        app = new ApplicationManager();
-        return app;
+        return new ApplicationManager();
     }
+
     public void init(){
         seleniumUtils = new SeleniumUtils();
         seleniumUtils.start();
@@ -24,7 +17,6 @@ public class ApplicationManager {
     public SeleniumUtils getSeleniumUtils(){
         if (seleniumUtils == null){
             seleniumUtils = new SeleniumUtils();
-            driver = seleniumUtils.getDriver();
         }
         return seleniumUtils;
     }

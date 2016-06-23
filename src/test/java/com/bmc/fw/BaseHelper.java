@@ -3,9 +3,6 @@ package com.bmc.fw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-/**
- * Created by energetic on 22.06.2016.
- */
 public class BaseHelper {
     protected final ApplicationManager app;
     protected final WebDriver driver;

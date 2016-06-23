@@ -3,9 +3,7 @@ package com.bmc.tests;
 import com.bmc.fw.GroupData;
 import org.testng.annotations.Test;
 
-/**
- * Created by energetic on 22.06.2016.
- */
+
 public class AddGroupTests extends MyTestBase{
 
     @Test
