@@ -9,7 +9,7 @@ public class ApplicationManager {
         return new ApplicationManager();
     }
 
-    public void init(){
+    public void init() throws InterruptedException {
         seleniumUtils = new SeleniumUtils();
         seleniumUtils.start();
     }

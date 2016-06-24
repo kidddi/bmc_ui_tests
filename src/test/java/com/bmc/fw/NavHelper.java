@@ -11,7 +11,7 @@ public class NavHelper extends BaseHelper{
 
     public GroupsHelper gotoGroupsPage() throws InterruptedException {
         if (! "/group.php".equals(driver.getCurrentUrl())) {
-            clickAndWait("link=groups");
+            clickAndWait("//div[@id='nav']//a[text()='groups']");
         }
         return app.getGroupsHelper();
     }

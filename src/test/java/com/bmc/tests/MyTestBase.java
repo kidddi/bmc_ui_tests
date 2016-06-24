@@ -11,7 +11,7 @@ public class MyTestBase {
     protected ApplicationManager app;
 
     @BeforeClass
-    public void setUp() {
+    public void setUp() throws InterruptedException {
         app = ApplicationManager.getInstanse();
         app.init();
     }

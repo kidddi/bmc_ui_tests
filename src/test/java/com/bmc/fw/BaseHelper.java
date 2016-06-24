@@ -13,12 +13,13 @@ public class BaseHelper {
         driver = app.getSeleniumUtils().getDriver();
     }
     protected void clickAndWait(String locator) throws InterruptedException {
-        driver.findElement(By.className(locator)).click();
-        driver.wait(30000);
+        driver.findElement(By.xpath(locator)).click();
+        System.out.println(locator + "Locator is clicked");
+        Thread.sleep(1000);
     }
     protected void type(String locator, String value){
         if (value != null){
-            driver.findElement(By.cssSelector(locator)).sendKeys(value);
+            driver.findElement(By.xpath(locator)).sendKeys(value);
         }
     }
 
