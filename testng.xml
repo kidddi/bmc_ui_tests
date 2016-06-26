@@ -1,0 +1,13 @@
+<suite name="BMC_tests">
+
+    <test name="AddingGroups">
+        <classes>
+            <class name="com.bmc.tests.AddGroupTests">
+                <methods>
+                    <include name = "testAddNewGroup"/>
+                </methods>
+            </class>
+            <!--<class name="selenium.TestngCase"></class>-->
+        </classes>
+    </test>
+</suite>

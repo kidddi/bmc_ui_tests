@@ -14,7 +14,7 @@ public class BaseHelper {
     }
     protected void clickAndWait(String locator) throws InterruptedException {
         driver.findElement(By.xpath(locator)).click();
-        System.out.println(locator + "Locator is clicked");
+        //System.out.println(locator + "Locator is clicked");
         Thread.sleep(1000);
     }
     protected void type(String locator, String value){
