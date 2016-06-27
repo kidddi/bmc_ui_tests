@@ -10,15 +10,18 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class AddGroupTests extends MyTestBase{
 
-    @Test (dataProvider = "randomGroup", dataProviderClass = GroupGenerator.class)
+    @Test (dataProvider = "groupsFromFile", dataProviderClass = GroupGenerator.class)
     public void testAddNewGroup(GroupData group) throws InterruptedException {
         Groups oldGroups = app.getGroupsHelper().getGroups();
+        oldGroups.groupPrinter();
 
         app.getGroupsHelper().createGroup(group);
         Groups newGroups = app.getGroupsHelper().getGroups();
 
-        //oldGroups.withAdded(group).groupPrinter();
-        //System.out.println(newGroups.toString());
+//        newGroups.groupPrinter();
+
+//        oldGroups.withAdded(group).groupPrinter();
+
         assertThat(newGroups, equalTo(oldGroups.withAdded(group)));
         //assertTrue();
 

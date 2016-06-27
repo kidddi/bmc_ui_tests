@@ -27,9 +27,9 @@ public class GroupsHelper extends BaseHelper{
     }
 
     public GroupsHelper fillGroupForm(GroupData group) {
-        type("//input[contains(@name, 'group_name')]", group.name);
-        type("//textarea[contains(@name, 'group_header')]", group.header);
-        type("//textarea[contains(@name, 'group_footer')]", group.footer);
+        type("//input[contains(@name, 'group_name')]", group.getName());
+        type("//textarea[contains(@name, 'group_header')]", group.getHeader());
+        type("//textarea[contains(@name, 'group_footer')]", group.getFooter());
         return this;
     }
 
@@ -44,6 +44,7 @@ public class GroupsHelper extends BaseHelper{
     public Set<GroupData> getGroupsSet() throws InterruptedException {
         app.getNavHelper().gotoGroupsPage();
         Set<GroupData> groups = new HashSet<GroupData>();
+        Thread.sleep(1000);
         int count = driver.findElements(By.xpath("//input[@name='selected[]']")).size();
         for (int i = 0; i < count; i++){
             String id = driver.findElement(By.xpath("//input[@name='selected[]']["+(i+1)+"]")).getAttribute("value");
@@ -60,6 +61,4 @@ public class GroupsHelper extends BaseHelper{
     public Groups getGroups() throws InterruptedException {
         return new Groups(getGroupsSet());
     }
-
-
 }
