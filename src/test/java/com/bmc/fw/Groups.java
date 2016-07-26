@@ -13,23 +13,23 @@ public class Groups {
         this.groups = new HashSet<GroupData>(groups);
     }
 
-    public Groups withAdded(GroupData group){
+    public Groups withAdded(GroupData group) {
         Groups newObj = new Groups(groups);
         newObj.groups.add(group);
         return newObj;
     }
 
-    public Groups groupPrinter(){
-        System.out.println("Printing GROUPS");
 
+    public void groupPrinter() {
+        System.out.println("Printing GROUPS");
+        System.out.println(groups.size());
         for (GroupData group : groups) {
-            System.out.println(group.id);
-        }
-        //for (int i = 0; i < groups.size(); i++){
+            System.out.println(group.getName());
+//        }
+            //for (int i = 0; i < groups.size(); i++){
 //            String s = groups.iterator().next().id;
 //            System.out.println(s);
-
-        return null;
+        }
     }
 
     @Override
@@ -40,6 +40,7 @@ public class Groups {
         Groups groups1 = (Groups) o;
 
         return !(groups != null ? !groups.equals(groups1.groups) : groups1.groups != null);
+
     }
 
     @Override

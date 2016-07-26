@@ -1,9 +1,8 @@
 package com.bmc.fw;
 
-import io.github.bonigarcia.wdm.OperaDriverManager;
+import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,9 +10,9 @@ public class SeleniumUtils {
     private WebDriver driver;
 
     public SeleniumUtils(){
-        //OperaDriverManager.getInstance().setup();
-
-        driver = new FirefoxDriver();
+        InternetExplorerDriverManager.getInstance().setup();
+        driver = new InternetExplorerDriver();
+        //driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
     }
