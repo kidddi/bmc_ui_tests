@@ -41,6 +41,11 @@ public class GroupsHelper extends BaseHelper{
     public void returnToGroupsPage() throws InterruptedException {
         clickAndWait("//div[@id='nav']//a[text()='groups']");
     }
+
+    public Set<GroupData> getGroupsSetWithJdbc(){
+        return app.getJdbcHelper().listGroups();
+    }
+
     public Set<GroupData> getGroupsSet() throws InterruptedException {
         app.getNavHelper().gotoGroupsPage();
         Set<GroupData> groups = new HashSet<GroupData>();
