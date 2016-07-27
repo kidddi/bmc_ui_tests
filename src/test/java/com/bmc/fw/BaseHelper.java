@@ -8,6 +8,7 @@ public class BaseHelper {
     protected final WebDriver driver;
 
 
+
     public BaseHelper(ApplicationManager app) {
         this.app = app;
         driver = app.getSeleniumUtils().getDriver();

@@ -17,7 +17,7 @@ public class NavHelper extends BaseHelper{
     }
 
     public NavHelper openMainPage() throws InterruptedException {
-        clickAndWait("link=home");
+        clickAndWait("//div[@id='nav']//a[text()='home']");
         //driver.navigate().to(Constans.baseURL);
         return this;
     }

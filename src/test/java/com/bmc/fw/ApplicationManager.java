@@ -3,6 +3,7 @@ package com.bmc.fw;
 public class ApplicationManager {
     private SeleniumUtils seleniumUtils;
     private GroupsHelper groupHelper;
+    private ContactsHelper contactsHelper;
     private NavHelper navUtils;
     private JdbcHelper jdbcHelper;
 
@@ -37,6 +38,12 @@ public class ApplicationManager {
             groupHelper = new GroupsHelper(this);
         }
         return groupHelper;
+    }
+    public ContactsHelper getContactsHelper() {
+        if (contactsHelper == null) {
+            contactsHelper = new ContactsHelper(this);
+        }
+        return contactsHelper;
     }
 
     public JdbcHelper getJdbcHelper(){
